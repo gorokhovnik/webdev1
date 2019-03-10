@@ -2,7 +2,6 @@
 	.vk {
 		background-color: blue;
 		max-width: 100%;
-		
 	}
 	
 	.ava {
@@ -21,7 +20,7 @@
 		line-height: 50%;
 		background-color: yellow;
 		height: 300px;
-		width: 59%;
+		width: 54%;
 		padding-left: 5%;
 		padding-right: 5%;
 		padding-top: 25px;
@@ -42,15 +41,14 @@
 		font-size: 100%;
 		background-color: purple;
 		height: 500px;
-		width: 69%
+		width: 64%
 	}
 }
 
 @media screen and (min-width: 640px) and (max-width: 1080px) {
 	.vk {
 		background-color: blue;
-		max-width: 90%;
-		
+		max-width: 100%;
 	}
 	
 	.ava {
@@ -68,12 +66,12 @@
 		letter-spacing: 4px;
 		line-height: 50%;
 		background-color: yellow;
-		height: 300px;
-		width: 59%;
+		height: 210px;
+		width: 48%;
 		padding-left: 5%;
 		padding-right: 5%;
-		padding-top: 25px;
-		padding-bottom: 25px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 		margin-bottom: 5px;
 	}
 
@@ -81,8 +79,8 @@
 		float: left;
 		font-size: 100%;
 		background-color: green;
-		height: 150px;
-		width: 350px;
+		height: 100px;
+		width: 250px;
 	}
 
 	.wall {
@@ -90,37 +88,53 @@
 		font-size: 100%;
 		background-color: purple;
 		height: 500px;
-		width: 69%
+		width: 58%
 	}
 }
 
 @media screen and (max-width: 640px) {
 	.vk {
 		background-color: blue;
-		max-width: 90%;
-		
+		max-width: 100%;
 	}
 	
 	.ava {
+		margin: auto;
 		font-size: 100%;
 		background-color: red;
-		max-width: 98%;
+		height: 350px;
+		width: 350px;
+		margin-bottom: 5px;
 	}
 
 	.profile {
-		font-size: 100%;
-		letter-spacing: 5px;
+		margin: auto;
+		font-size: 80%;
+		letter-spacing: 4px;
 		line-height: 50%;
 		background-color: yellow;
+		height: 210px;
+		width: 80%;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-bottom: 5px;
 	}
 
 	.friends {
+		margin: auto;
 		font-size: 100%;
 		background-color: green;
+		height: 150px;
+		width: 90%;
 	}
 
 	.wall {
+		margin: auto;
 		font-size: 100%;
 		background-color: purple;
+		height: 500px;
+		width: 90%
 	}
 }
