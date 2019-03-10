@@ -1,23 +1,126 @@
-.ava {
-	color = #50ffcc;
-	font-size: 500%;
-	font-style: "Comic Sans MS";
+@media screen and (min-width: 1080px) {
+	.vk {
+		background-color: blue;
+		max-width: 100%;
+		
+	}
+	
+	.ava {
+		float: left;
+		font-size: 100%;
+		background-color: red;
+		height: 350px;
+		width: 350px;
+		margin-bottom: 5px;
+	}
+
+	.profile {
+		float: right;
+		font-size: 100%;
+		letter-spacing: 5px;
+		line-height: 50%;
+		background-color: yellow;
+		height: 300px;
+		width: 59%;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		margin-bottom: 5px;
+	}
+
+	.friends {
+		float: left;
+		font-size: 100%;
+		background-color: green;
+		height: 150px;
+		width: 350px;
+	}
+
+	.wall {
+		float: right;
+		font-size: 100%;
+		background-color: purple;
+		height: 500px;
+		width: 69%
+	}
 }
 
-.profile {
-	color = #50ffcc;
-	font-size: 500%;
-	font-style: "Comic Sans MS";
+@media screen and (min-width: 640px) and (max-width: 1080px) {
+	.vk {
+		background-color: blue;
+		max-width: 90%;
+		
+	}
+	
+	.ava {
+		float: left;
+		font-size: 100%;
+		background-color: red;
+		height: 250px;
+		width: 250px;
+		margin-bottom: 5px;
+	}
+
+	.profile {
+		float: right;
+		font-size: 80%;
+		letter-spacing: 4px;
+		line-height: 50%;
+		background-color: yellow;
+		height: 300px;
+		width: 59%;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		margin-bottom: 5px;
+	}
+
+	.friends {
+		float: left;
+		font-size: 100%;
+		background-color: green;
+		height: 150px;
+		width: 350px;
+	}
+
+	.wall {
+		float: right;
+		font-size: 100%;
+		background-color: purple;
+		height: 500px;
+		width: 69%
+	}
 }
 
-.friends {
-	color = #50ffcc;
-	font-size: 500%;
-	font-style: "Comic Sans MS";
-}
+@media screen and (max-width: 640px) {
+	.vk {
+		background-color: blue;
+		max-width: 90%;
+		
+	}
+	
+	.ava {
+		font-size: 100%;
+		background-color: red;
+		max-width: 98%;
+	}
 
-.wall {
-	color = #50ffcc;
-	font-size: 500%;
-	font-style: "Comic Sans MS";
+	.profile {
+		font-size: 100%;
+		letter-spacing: 5px;
+		line-height: 50%;
+		background-color: yellow;
+	}
+
+	.friends {
+		font-size: 100%;
+		background-color: green;
+	}
+
+	.wall {
+		font-size: 100%;
+		background-color: purple;
+	}
 }
