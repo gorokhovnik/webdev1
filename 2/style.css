@@ -1,0 +1,16 @@
+.container-fluid {
+	background-color: blue;
+	align: center;
+}
+
+.img-fluid {
+	align: center;
+}
+
+.row {
+	align: center;
+}
+
+.col-4 {
+	align: center;
+}
