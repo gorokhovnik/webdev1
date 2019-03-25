@@ -2,30 +2,23 @@
 	background-image: url(img/back.jpg);
 }
 
-.container {
-    
-	align: center;
-}
-
-.img-fluid {
-	align: center;
-	
-}
-
-.row {
-	align: center;
+.h1 {
+	justify-content: center;
+	color: rgb(24, 24, 128);
 }
 
 .col-4 {
-	align: center;
-	background-color: rgba(200, 200, 224, 0.8);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: rgba(192, 192, 224, 0.8);
 	width: 100%;
 }
 
 #pacany {
+	margin: 10px;
 	background-color: rgba(224, 224, 224, 0.8);
 }
 
 textarea {
-	width: 90%;
+	width: 98%;
 }
