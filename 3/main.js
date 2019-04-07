@@ -1,4 +1,4 @@
-function getAuthorQuote() {
+function getQuote() {
 	var quote_source = 'http://quotes.stormconsultancy.co.uk/random.json'
 
 	var xhr = new XMLHttpRequest();
@@ -8,7 +8,7 @@ function getAuthorQuote() {
 		alert(xhr.status + ': ' + xhr.statusText);
 	} else {
 		response = JSON.parse(xhr.responseText);
-		return [response['author'], response['quote']]
+		return response['quote'];
 	}
 }
 
@@ -16,6 +16,30 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function addQuote(quote) {
+	ctx.font = '40px arial';
+	ctx.fillStyle = 'white';
+	ctx.textAlign = 'center';
+	words = quote.split(' ');
+	var lines = [],
+		currentLine = '';
+	for (word_id in words) {
+		if (currentLine.length + words[word_id].length < 40) {
+			if (currentLine.length != 0) {
+				currentLine += ' ';
+			}
+			currentLine += words[word_id];
+		} else {
+			lines.push(currentLine);
+			currentLine = '';
+		}
+	}
+	lines.push(currentLine);	
+	alert(lines.length);
+	for (line_id in lines) {
+		ctx.fillText(lines[line_id], 500, line_id * 40 + 40 * (13 - lines.length / 2));
+	}
+}
 
 
 var img_source = 'https://source.unsplash.com/collection/1127163/';
@@ -33,6 +57,7 @@ var img1 = new Image(),
 var xSize = getRandomInt(200, 800),
 	ySize = getRandomInt(200, 800);
 	
+	
 img1.src = img_source + xSize + 'x' + ySize;
 img1.onload = function() {
 	ctx.drawImage(img1, 0, 0);
@@ -45,6 +70,9 @@ img1.onload = function() {
 			img4.src = img_source + (1000 - xSize) + 'x' + (1000 - ySize);
 			img4.onload = function() {
 				ctx.drawImage(img4, xSize, ySize);
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+				ctx.fillRect(0, 0, 1000, 1000);
+				addQuote(getQuote());
 			}
 		}
 	}
