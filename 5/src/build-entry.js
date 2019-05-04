@@ -1,17 +1,12 @@
 import MarkdownEditor from './components/MarkdownEditor.vue';
-import Toolbar from './components/Toolbar.vue';
+import preview from './components/Preview'
+import complex from './components/Theme'
 import marked from './util/marked.js';
 
-// Named export
 export {
 	MarkdownEditor as Editor,
-	Toolbar as Toolbar,
+	preview as Preview,
+	complex as Theme,
 	marked as Renderer
 };
 
-// Default export
-export default {
-	Editor: MarkdownEditor,
-	Toolbar,
-	Renderer: marked
-};

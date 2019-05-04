@@ -1,24 +1,21 @@
 <template>
   <v-app>
-    <Editor ref="editor" nativeEmoji :outline="true" :preview="true" v-model="text" />
+  <Theme></Theme>
   </v-app>
 </template>
 
 <script>
-import { Editor } from './build-entry.js';
+    import {Theme} from './build-entry.js';
 
-export default {
-  name: 'app',
-  components: {
-    Editor
-  },
-  data() {
-    return {
-      text: ''
+    export default {
+        name: 'app',
+        components: {
+            Theme
+        },
+        data() {
+            return {
+                text: ''
+            };
+        }
     };
-  },
-  mounted() {
-    this.$refs.editor.focus();
-  }
-};
 </script>

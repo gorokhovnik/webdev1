@@ -15,7 +15,6 @@ code:after
 	content: initial;
 }
 
-/* Change h1, h2... styles to make markdown format better */
 h1
 {
 	font-size: 1.8em;
