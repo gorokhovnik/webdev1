@@ -1,44 +1,44 @@
 <template>
-  <v-container style="padding: 0" fluid>
-    <v-layout row wrap>
+    <v-container style="padding: 0" fluid>
+        <v-layout row wrap>
 
-      <v-flex xs12 :md6="preview" class="pa-3">
-        <v-layout column>
-          <v-card>
-            <v-textarea
-                row-size="25"
-                rows="14"
-                solo
-                flat
-                hide-details
-                auto-grow
-                background-color="#fff69e"
-                ref="textarea"
-                :value="value"
-                @input="val => $emit('input', val)"
-            />
-          </v-card>
+            <v-flex xs12 :md6="preview" class="pa-3">
+                <v-layout column>
+                    <v-card>
+                        <v-textarea
+                                row-size="25"
+                                rows="14"
+                                solo
+                                flat
+                                hide-details
+                                auto-grow
+                                background-color="#fff69e"
+                                ref="textarea"
+                                :value="value"
+                                @input="val => $emit('input', val)"
+                        />
+                    </v-card>
+                </v-layout>
+            </v-flex>
+
+            <v-flex xs12 :md6="preview" class="pa-3">
+                <v-card min-height="350px" color="#fff69e">
+                    <v-card-text v-if="mode === 'Rendered'" class="subheading markdown-text" v-html="compiled"/>
+                    <v-card-text v-else-if="mode === 'Source'" class="subheading">
+                        {{ compiled }}
+                    </v-card-text>
+                </v-card>
+            </v-flex>
+
         </v-layout>
-      </v-flex>
-
-      <v-flex xs12 :md6="preview" class="pa-3">
-          <v-card min-height="350px" color="#fff69e">
-            <v-card-text v-if="mode === 'Rendered'" class="subheading markdown-text" v-html="compiled"/>
-            <v-card-text v-else-if="mode === 'Source'" class="subheading">
-              {{ compiled }}
-            </v-card-text>
-          </v-card>
-      </v-flex>
-
-    </v-layout>
-  </v-container>
+    </v-container>
 </template>
 
 <style scoped>
-  .v-textarea >>> .v-input__control > .v-input__slot {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
+    .v-textarea >>> .v-input__control > .v-input__slot {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 
 </style>
 

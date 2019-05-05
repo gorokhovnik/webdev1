@@ -1,54 +1,54 @@
 <template>
-  <v-app id="inspire">
-    <v-toolbar
-        color="blue"
-        dark
-        fixed
-        app
-        clipped-left
-    >
-      <v-toolbar-title>Document Editor</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn flat color="white" @click="createEmptyDocument()">Create New Document</v-btn>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <v-app id="inspire">
+        <v-toolbar
+                color="blue"
+                dark
+                fixed
+                app
+                clipped-left
+        >
+            <v-toolbar-title>Document Editor</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn flat color="white" @click="createEmptyDocument()">Create New Document</v-btn>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
-    </v-toolbar>
+        </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" fixed right app>
-      <v-list two-line subheader>
-        <v-subheader>All documents</v-subheader>
+        <v-navigation-drawer v-model="drawer" fixed right app>
+            <v-list two-line subheader>
+                <v-subheader>All documents</v-subheader>
 
-        <Preview
-            v-for="post in posts"
-            v-bind:key="post.id"
-            v-bind:post="post"
-            v-on:openDocument="openDocument"
-        ></Preview>
-      </v-list>
-    </v-navigation-drawer>
+                <Preview
+                        v-for="post in posts"
+                        v-bind:key="post.id"
+                        v-bind:post="post"
+                        v-on:openDocument="openDocument"
+                ></Preview>
+            </v-list>
+        </v-navigation-drawer>
 
-    <v-content>
-      <editor ref="editor"
-              :outline="true"
-              :preview="true"
-              v-model="openedDocument.body"
-      ></editor>
-      <Preserver
-          :post="openedDocument"
-          :is-post-new="isDocumentNew"
-          v-on:appendDocument="appendDocument"
-          v-on:updateDocument="updateDocument"
-      ></Preserver>
+        <v-content>
+            <editor ref="editor"
+                    :outline="true"
+                    :preview="true"
+                    v-model="openedDocument.body"
+            ></editor>
+            <Preserver
+                    :post="openedDocument"
+                    :is-post-new="isDocumentNew"
+                    v-on:appendDocument="appendDocument"
+                    v-on:updateDocument="updateDocument"
+            ></Preserver>
 
-      <v-btn class="ml-5" v-if="!isDocumentNew" depressed color="primary" @click="deleteDocument()">Delete</v-btn>
-    </v-content>
+            <v-btn class="ml-5" v-if="!isDocumentNew" depressed color="primary" @click="deleteDocument()">Delete</v-btn>
+        </v-content>
 
-    <v-footer color="blue" class="white--text" app>
-      <span>Daniil Nizovkin</span>
-      <v-spacer></v-spacer>
-      <span>&copy; 2019</span>
-    </v-footer>
-  </v-app>
+        <v-footer color="blue" class="white--text" app>
+            <span>Daniil Nizovkin</span>
+            <v-spacer></v-spacer>
+            <span>&copy; 2019</span>
+        </v-footer>
+    </v-app>
 </template>
 
 <script>

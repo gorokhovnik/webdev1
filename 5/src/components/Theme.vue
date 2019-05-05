@@ -40,7 +40,9 @@
                     v-on:updateDocument="updateDocument"
             ></Preserver>
 
-            <v-btn v-if="!isDocumentNew" class="yellow--text" depressed color="purple" @click="deleteDocument()">удалить</v-btn>
+            <v-btn v-if="!isDocumentNew" class="yellow--text" depressed color="purple" @click="deleteDocument()">
+                удалить
+            </v-btn>
         </v-content>
 
     </v-app>

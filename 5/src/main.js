@@ -11,5 +11,5 @@ Vue.use(Vuetify);
 Vue.use(Msg)
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
 }).$mount('#app')
