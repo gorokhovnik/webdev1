@@ -17,7 +17,7 @@ code:after {
 h1 {
     font-size: 1.8em;
     margin: 0.3em 0;
-/ / border-bottom: 1 px solid #eaecef;
+    border-bottom: 1 px solid #eaecef;
 }
 
 h2 {

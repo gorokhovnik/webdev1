@@ -1,22 +1,22 @@
 <template>
-    <v-app id="inspire">
+    <v-app id="inspire" style="background: #444455">
         <v-toolbar
-                color="blue"
                 dark
                 fixed
                 app
                 clipped-left
+                color="#222233"
         >
-            <v-toolbar-title>Document Editor</v-toolbar-title>
+            <v-toolbar-title style="color: #EEEEFF">тру дилингер</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn flat color="white" @click="createEmptyDocument()">Create New Document</v-btn>
-            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-btn flat @click="createEmptyDocument()" style="color: #EEEEFF">создать новый</v-btn>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer" style="font-size: 100%; color: #EEEEFF">|||</v-toolbar-side-icon>
 
         </v-toolbar>
 
-        <v-navigation-drawer v-model="drawer" fixed right app>
-            <v-list two-line subheader>
-                <v-subheader>All documents</v-subheader>
+        <v-navigation-drawer v-model="drawer" fixed right app style="background: #666677">
+            <v-list two-line subheader >
+                <v-subheader style="background: #AAAABB" align="center">документы</v-subheader>
 
                 <Preview
                         v-for="post in posts"
@@ -40,14 +40,8 @@
                     v-on:updateDocument="updateDocument"
             ></Preserver>
 
-            <v-btn class="ml-5" v-if="!isDocumentNew" depressed color="primary" @click="deleteDocument()">Delete</v-btn>
+            <v-btn class="ml-5" v-if="!isDocumentNew" depressed color="#333344" @click="deleteDocument()">удолить</v-btn>
         </v-content>
-
-        <v-footer color="blue" class="white--text" app>
-            <span>Daniil Nizovkin</span>
-            <v-spacer></v-spacer>
-            <span>&copy; 2019</span>
-        </v-footer>
     </v-app>
 </template>
 
@@ -97,7 +91,7 @@
 
             createEmptyDocument: function () {
                 this.isDocumentNew = true;
-                this.openedDocument = {title: 'New Document', user: 'User', body: '# Start typing here'};
+                this.openedDocument = {title: 'название', user: 'автор', body: '*старт*'};
             },
 
             deleteDocument() {
@@ -105,20 +99,21 @@
                     .then(response => {
                         this.posts.splice(this.posts.indexOf(this.posts.find(docs => docs._id === this.openedDocument._id)), 1);
                         this.createEmptyDocument();
-                        this.$msg('Document is deleted!')
+                        this.$msg('удолено')
                     })
             },
+
             appendDocument(addedDocument) {
                 this.openedDocument = addedDocument;
                 this.isDocumentNew = false;
                 this.posts.push(this.openedDocument);
-                this.$msg('Document is saved');
+                this.$msg('сохранено');
             },
 
             updateDocument(updatedDocument) {
                 this.openedDocument = updatedDocument;
                 this.posts[this.posts.indexOf(this.posts.find(doc => doc._id === this.openedDocument._id))] = this.openedDocument;
-                this.$msg('Document is saved');
+                this.$msg('сохранено');
             }
         }
     }

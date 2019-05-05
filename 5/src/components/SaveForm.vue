@@ -7,33 +7,35 @@
                         sm12
                         md5
                 >
-                    <v-toolbar dark color="blue">
-                        <v-toolbar-title>Save document form</v-toolbar-title>
+                    <v-toolbar dark color="#222233">
+                        <v-toolbar-title>сохраняй здесь</v-toolbar-title>
                         <v-spacer></v-spacer>
-                        <v-btn v-if="isPostNew" color="primary" @click="createDoc">Save</v-btn>
-                        <v-btn v-else color="primary" @click="updateDoc">Save</v-btn>
+                        <v-btn v-if="isPostNew" color="#333344" @click="createDoc">сохранить</v-btn>
+                        <v-btn v-else color="#333344" @click="updateDoc">сохранить</v-btn>
                     </v-toolbar>
 
-                    <v-card class="elevation-12">
+                    <v-card class="elevation-12" style="background: #AAAABB">
                         <v-card-text>
                             <v-text-field
+                                    color="#111122"
                                     v-bind:title="post.title"
                                     v-model="docName"
                                     v-validate="'required|max:50'"
                                     :counter="50"
                                     :error-messages="errors.collect('docName')"
-                                    label="Document name"
+                                    label="название"
                                     data-vv-name="docName"
                                     required
                             ></v-text-field>
 
                             <v-text-field
+                                    color="#111122"
                                     v-bind:title="post.user"
                                     v-model="username"
                                     v-validate="'required|max:25'"
                                     :counter="25"
                                     :error-messages="errors.collect('username')"
-                                    label="Username"
+                                    label="автор_ка"
                                     data-vv-name="username"
                                     required
                             ></v-text-field>
@@ -72,12 +74,12 @@
                 dictionary: {
                     custom: {
                         docName: {
-                            required: () => 'Document name can not be empty',
-                            max: 'The name field may not be greater than 50 characters'
+                            required: () => 'введите название',
+                            max: 'напитки покрепче, слова покороче 50 символов'
                         },
                         username: {
-                            required: () => 'Username can not be empty',
-                            max: 'The name field may not be greater than 25 characters'
+                            required: () => 'введите автора',
+                            max: 'напитки покрепче, слова покороче 25 символов'
                         }
                     }
                 }

@@ -1,5 +1,5 @@
 {
-  "name": "vuetify-markdown-editor",
+  "name": "5lab",
   "version": "0.3.5",
   "description": "A Vue.js Component for editing and previewing markdown.",
   "main": "./dist/vuetify-markdown-editor.common.js",

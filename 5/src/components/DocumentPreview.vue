@@ -1,21 +1,21 @@
 <template>
-    <v-card>
+    <v-card style="background: #777788">
         <v-container
                 fluid
                 grid-list-lg
         >
             <v-layout row wrap>
                 <v-flex>
-                    <v-card color="blue darken-2" class="white--text">
+                    <v-card color="#AAAABB" style="color: #111122">
                         <v-card-title primary-title>
                             <div>
                                 <div class="headline">{{ post.title }}</div>
-                                <span>Created by {{ post.user }}.</span>
+                                <span>создал {{ post.user }}</span>
                             </div>
                         </v-card-title>
                         <v-divider light></v-divider>
                         <v-card-actions>
-                            <v-btn flat dark v-on:click="$emit('openDocument', post)">Open document</v-btn>
+                            <v-btn flat dark style="color: #222233" v-on:click="$emit('openDocument', post)">открыть</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-flex>

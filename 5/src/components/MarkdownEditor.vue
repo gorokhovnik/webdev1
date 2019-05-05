@@ -12,7 +12,7 @@
                                 flat
                                 hide-details
                                 auto-grow
-                                background-color="#fff69e"
+                                background-color="#AAAABB"
                                 ref="textarea"
                                 :value="value"
                                 @input="val => $emit('input', val)"
@@ -22,7 +22,7 @@
             </v-flex>
 
             <v-flex xs12 :md6="preview" class="pa-3">
-                <v-card min-height="350px" color="#fff69e">
+                <v-card min-height="350px" color="#AAAABB">
                     <v-card-text v-if="mode === 'Rendered'" class="subheading markdown-text" v-html="compiled"/>
                     <v-card-text v-else-if="mode === 'Source'" class="subheading">
                         {{ compiled }}
